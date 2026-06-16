@@ -3,56 +3,54 @@ import Link from "next/link";
 
 const highlights = [
   {
-    label: "IIT Gandhinagar",
-    value: "CSE undergraduate, Class of 2027",
+    label: "Education",
+    value: "B.Tech CSE, IIT Gandhinagar, 2023-2027",
   },
   {
-    label: "Samsung India",
-    value: "Software Engineering Intern in Noida",
+    label: "Current role",
+    value: "Software Engineering Intern at Samsung India, Noida",
   },
   {
-    label: "Academic track",
-    value: "JEE Advanced AIR 1682, Dean's List",
+    label: "Achievements",
+    value: "JEE Advanced AIR 1682, JEE Main AIR 1464, Dean's List",
   },
 ];
 
-const focusAreas = [
-  "Building clean, practical web apps",
-  "Learning strong CS fundamentals",
-  "Turning ideas into shipped products",
-];
-
-const timeline = [
+const projects = [
   {
-    year: "2023 - 2027",
-    title: "B.Tech in CSE at IIT Gandhinagar",
-    description:
-      "Focused on computer science fundamentals, problem solving, and building a strong engineering base.",
+    name: "ChatForge",
+    summary:
+      "Real-time chat application with JWT auth, socket-based messaging, typing indicators, read receipts, Redis presence tracking, Kafka pipelines, and Dockerized testing.",
+    stack: ["Node.js", "Express", "Socket.io", "MongoDB", "Redis", "Kafka", "Docker"],
   },
   {
-    year: "2023-24",
-    title: "Dean's List recognition",
-    description:
-      "Selected for the Dean's List in Semester I, Academic Year 2023-24.",
-  },
-  {
-    year: "2026",
-    title: "Samsung India software intern",
-    description:
-      "Starting industry experience in Noida with a focus on software engineering growth.",
+    name: "QuickBites",
+    summary:
+      "Food delivery backend system with normalized MySQL design, REST APIs, RBAC, audit logging, ACID transactions, sharding, and a custom B+ Tree index in Python.",
+    stack: ["MySQL", "Python", "REST APIs", "RBAC", "ACID", "Sharding", "B+ Trees"],
   },
 ];
 
-const stack = [
+const skills = [
   "C++",
+  "Java",
   "Python",
   "JavaScript",
-  "TypeScript",
-  "Next.js",
-  "React",
-  "HTML/CSS",
-  "Data Structures",
-  "Problem Solving",
+  "Node.js",
+  "Express.js",
+  "SQL",
+  "MongoDB",
+  "Redis",
+  "Kafka",
+  "Docker",
+  "Git",
+];
+
+const achievements = [
+  "Dean's List in Semester 1 at IIT Gandhinagar",
+  "JEE Advanced 2023: AIR 1682",
+  "JEE Main 2023: AIR 1464",
+  "MHT-CET 2023: Maharashtra State Rank 67",
 ];
 
 export default function Home() {
@@ -62,17 +60,18 @@ export default function Home() {
         <header className="sticky top-4 z-20 mb-10 rounded-full border border-black/10 bg-white/70 px-5 py-3 shadow-[0_20px_60px_rgba(20,20,20,0.08)] backdrop-blur">
           <div className="flex items-center justify-between gap-4">
             <div>
-              <p className="text-xs uppercase tracking-[0.35em] text-black/55">
-                Tanishq Chaudhari
-              </p>
-              <p className="text-sm text-black/70">Aspiring software developer</p>
+              <p className="text-xs uppercase tracking-[0.35em] text-black/55">Tanishq Chaudhari</p>
+              <p className="text-sm text-black/70">Software developer</p>
             </div>
             <nav className="hidden items-center gap-6 text-sm text-black/70 md:flex">
               <Link href="#about" className="transition hover:text-black">
                 About
               </Link>
-              <Link href="#journey" className="transition hover:text-black">
-                Journey
+              <Link href="#projects" className="transition hover:text-black">
+                Projects
+              </Link>
+              <Link href="#skills" className="transition hover:text-black">
+                Skills
               </Link>
               <Link href="#contact" className="transition hover:text-black">
                 Contact
@@ -81,33 +80,33 @@ export default function Home() {
           </div>
         </header>
 
-        <section id="home" className="grid gap-8 pb-20 lg:grid-cols-[1.25fr_0.75fr] lg:gap-12 lg:pb-24">
+        <section id="home" className="grid gap-8 pb-20 lg:grid-cols-[1.2fr_0.8fr] lg:gap-12 lg:pb-24">
           <div className="flex flex-col justify-end">
-            <div className="mb-6 inline-flex w-fit items-center rounded-full border border-black/10 bg-white/70 px-4 py-2 text-sm text-black/70 shadow-sm backdrop-blur">
-              Software Engineering Intern at Samsung India, Noida
-            </div>
-
             <h1 className="max-w-4xl font-display text-5xl leading-[0.95] tracking-tight text-balance text-black sm:text-6xl lg:text-7xl">
-              Building a disciplined path from campus problem solver to product-ready software engineer.
+              I build backend systems, real-time apps, and clean software.
             </h1>
 
-            <p className="mt-6 max-w-2xl text-lg leading-8 text-black/70 sm:text-xl">
-              I am Tanishq Chaudhari, a Computer Science and Engineering student at IIT Gandhinagar.
-              My focus is on strong fundamentals, clean implementation, and shipping reliable software that feels sharp and useful.
+            <p className="mt-6 max-w-2xl text-lg leading-8 text-black/72 sm:text-xl">
+              I am Tanishq Bhushan Chaudhari, a Computer Science and Engineering student at IIT Gandhinagar.
+              I work with Node.js, Express.js, SQL, Python, Docker, and distributed system tools while learning from industry experience at Samsung India.
+            </p>
+
+            <p className="mt-4 max-w-2xl text-lg leading-8 text-black/72 sm:text-xl">
+              I like building solid systems, writing clear code, and keeping the work practical.
             </p>
 
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Link
-                href="#journey"
+                href="#projects"
                 className="inline-flex h-12 items-center justify-center rounded-full bg-black px-6 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-black/90"
               >
-                Explore my journey
+                View projects
               </Link>
               <Link
-                href="#contact"
+                href="mailto:tbchaudhari7@gmail.com"
                 className="inline-flex h-12 items-center justify-center rounded-full border border-black/15 bg-white/70 px-6 text-sm font-semibold text-black transition hover:-translate-y-0.5 hover:bg-white"
               >
-                Connect with me
+                Email me
               </Link>
               <Link
                 href="/Tanishq-Chaudhari-Resume.pdf"
@@ -115,7 +114,7 @@ export default function Home() {
                 rel="noreferrer"
                 className="inline-flex h-12 items-center justify-center rounded-full border border-black/15 bg-[#f4b860] px-6 text-sm font-semibold text-black transition hover:-translate-y-0.5 hover:bg-[#f8c56f]"
               >
-                View resume
+                Resume
               </Link>
             </div>
 
@@ -125,12 +124,8 @@ export default function Home() {
                   key={item.label}
                   className="rounded-3xl border border-black/10 bg-white/70 p-5 shadow-[0_18px_45px_rgba(20,20,20,0.06)] backdrop-blur"
                 >
-                  <p className="text-xs uppercase tracking-[0.3em] text-black/45">
-                    {item.label}
-                  </p>
-                  <p className="mt-3 text-base font-medium leading-6 text-black">
-                    {item.value}
-                  </p>
+                  <p className="text-xs uppercase tracking-[0.3em] text-black/45">{item.label}</p>
+                  <p className="mt-3 text-base font-medium leading-6 text-black">{item.value}</p>
                 </article>
               ))}
             </div>
@@ -150,24 +145,13 @@ export default function Home() {
               </div>
 
               <div>
-                <p className="text-xs uppercase tracking-[0.35em] text-white/45">
-                  Current profile
-                </p>
+                <p className="text-xs uppercase tracking-[0.35em] text-white/45">Profile</p>
                 <h2 className="mt-4 font-display text-3xl leading-tight sm:text-4xl">
-                  Future-ready developer with a strong academic base.
+                  IIT Gandhinagar CSE and Samsung India intern.
                 </h2>
                 <p className="mt-4 max-w-md text-sm leading-7 text-white/72">
-                  IITGN CSE, Dean's List recognition, and a Samsung India internship are the starting points.
-                  The bigger goal is steady growth into someone who can build, debug, and deliver with confidence.
+                  Interested in backend engineering, scalable systems, and software that works reliably under pressure.
                 </p>
-              </div>
-
-              <div className="mt-8 grid gap-3">
-                {focusAreas.map((item) => (
-                  <div key={item} className="rounded-2xl border border-white/10 bg-white/6 px-4 py-3 text-sm text-white/82">
-                    {item}
-                  </div>
-                ))}
               </div>
             </div>
           </aside>
@@ -177,53 +161,65 @@ export default function Home() {
           <div>
             <p className="text-sm uppercase tracking-[0.35em] text-black/45">About</p>
             <h2 className="mt-4 font-display text-4xl tracking-tight text-black sm:text-5xl">
-              A student who likes structure, learning, and practical engineering.
+              Simple. Clear. Built around the work.
             </h2>
           </div>
           <div className="rounded-[2rem] border border-black/10 bg-white/75 p-6 shadow-[0_18px_45px_rgba(20,20,20,0.06)] backdrop-blur sm:p-8">
             <p className="text-lg leading-8 text-black/75">
-              I am currently studying Computer Science and Engineering at IIT Gandhinagar.
-              My academic journey includes JEE Advanced AIR 1682, a State Rank 67 in MHT-CET, and Dean's List recognition at IITGN.
-              I am now translating that foundation into industry experience through my software internship at Samsung India.
+              I study Computer Science and Engineering at IIT Gandhinagar, and I am currently working as a Software Engineering Intern at Samsung India in Noida.
             </p>
             <p className="mt-4 text-lg leading-8 text-black/75">
-              This site is meant to feel like a crisp, honest personal homepage: clear enough for recruiters,
-              strong enough for future project updates, and simple to keep growing over time.
+              I like backend systems, databases, distributed tools, and practical engineering that makes products feel dependable.
             </p>
           </div>
         </section>
 
-        <section id="journey" className="pb-20">
+        <section id="projects" className="pb-20">
           <div className="mb-6 flex items-end justify-between gap-4">
             <div>
-              <p className="text-sm uppercase tracking-[0.35em] text-black/45">Journey</p>
+              <p className="text-sm uppercase tracking-[0.35em] text-black/45">Projects</p>
               <h2 className="mt-4 font-display text-4xl tracking-tight text-black sm:text-5xl">
-                Education and milestones.
+                Projects from my resume.
               </h2>
             </div>
             <p className="hidden max-w-sm text-sm leading-6 text-black/60 md:block">
-              A compact timeline that highlights the things most relevant to a future software developer profile.
+              Two projects that best show the kind of systems I like building.
             </p>
           </div>
 
-          <div className="grid gap-4 lg:grid-cols-3">
-            {timeline.map((item) => (
+          <div className="grid gap-4 lg:grid-cols-2">
+            {projects.map((project) => (
               <article
-                key={item.title}
-                className="rounded-[1.75rem] border border-black/10 bg-white/75 p-6 shadow-[0_16px_40px_rgba(20,20,20,0.06)] backdrop-blur"
+                key={project.name}
+                className="rounded-[1.75rem] border border-black/10 bg-white/80 p-6 shadow-[0_16px_40px_rgba(20,20,20,0.06)] backdrop-blur"
               >
-                <p className="text-xs uppercase tracking-[0.35em] text-black/45">{item.year}</p>
-                <h3 className="mt-4 text-xl font-semibold text-black">{item.title}</h3>
-                <p className="mt-3 text-base leading-7 text-black/68">{item.description}</p>
+                <p className="text-xs uppercase tracking-[0.35em] text-black/45">Project</p>
+                <h3 className="mt-4 text-2xl font-semibold text-black">{project.name}</h3>
+                <p className="mt-3 text-base leading-7 text-black/70">{project.summary}</p>
+                <div className="mt-5 flex flex-wrap gap-2">
+                  {project.stack.map((item) => (
+                    <span
+                      key={item}
+                      className="rounded-full border border-black/10 bg-black/5 px-3 py-1 text-xs font-medium text-black/70"
+                    >
+                      {item}
+                    </span>
+                  ))}
+                </div>
               </article>
             ))}
           </div>
+        </section>
 
-          <div className="mt-4 rounded-[1.75rem] border border-black/10 bg-[#121212] p-6 text-white shadow-[0_18px_45px_rgba(20,20,20,0.16)] sm:p-8">
-            <p className="text-xs uppercase tracking-[0.35em] text-white/45">Skills in focus</p>
+        <section id="skills" className="pb-20">
+          <div className="rounded-[1.75rem] border border-black/10 bg-[#121212] p-6 text-white shadow-[0_18px_45px_rgba(20,20,20,0.16)] sm:p-8">
+            <p className="text-xs uppercase tracking-[0.35em] text-white/45">Skills</p>
             <div className="mt-5 flex flex-wrap gap-3">
-              {stack.map((item) => (
-                <span key={item} className="rounded-full border border-white/10 bg-white/6 px-4 py-2 text-sm text-white/84">
+              {skills.map((item) => (
+                <span
+                  key={item}
+                  className="rounded-full border border-white/10 bg-white/6 px-4 py-2 text-sm text-white/84"
+                >
                   {item}
                 </span>
               ))}
@@ -231,37 +227,45 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="contact" className="pb-12">
-          <div className="grid gap-6 rounded-[2rem] border border-black/10 bg-white/80 p-6 shadow-[0_24px_60px_rgba(20,20,20,0.08)] backdrop-blur lg:grid-cols-[1.1fr_0.9fr] lg:p-8">
-            <div>
-              <p className="text-sm uppercase tracking-[0.35em] text-black/45">Contact</p>
-              <h2 className="mt-4 font-display text-4xl tracking-tight text-black sm:text-5xl">
-                Let’s build something solid.
-              </h2>
-              <p className="mt-4 max-w-xl text-lg leading-8 text-black/70">
-                If you want to collaborate, review my work, or follow my progress as I grow into a stronger software developer,
-                the best place to start is LinkedIn.
-              </p>
-            </div>
+        <section className="grid gap-6 pb-12 lg:grid-cols-[1fr_0.9fr]">
+          <div className="rounded-[1.75rem] border border-black/10 bg-white/80 p-6 shadow-[0_24px_60px_rgba(20,20,20,0.08)] backdrop-blur sm:p-8">
+            <p className="text-sm uppercase tracking-[0.35em] text-black/45">Achievements</p>
+            <ul className="mt-5 space-y-3 text-base leading-7 text-black/75">
+              {achievements.map((item) => (
+                <li key={item}>• {item}</li>
+              ))}
+            </ul>
+          </div>
 
-            <div className="flex flex-col justify-between rounded-[1.5rem] border border-black/10 bg-[#171717] p-6 text-white sm:p-7">
-              <div>
-                <p className="text-xs uppercase tracking-[0.35em] text-white/45">Reach out</p>
-                <p className="mt-4 text-2xl font-semibold">LinkedIn</p>
-                <p className="mt-2 break-all text-sm text-white/65">
-                  linkedin.com/in/tanishq-chaudhari-0540aa28a
-                </p>
-              </div>
+          <div id="contact" className="rounded-[1.75rem] border border-black/10 bg-[#171717] p-6 text-white shadow-[0_24px_60px_rgba(20,20,20,0.12)] sm:p-8">
+            <p className="text-sm uppercase tracking-[0.35em] text-white/45">Contact</p>
+            <h2 className="mt-4 font-display text-4xl tracking-tight text-white sm:text-5xl">
+              tbchaudhari7@gmail.com
+            </h2>
+            <p className="mt-4 max-w-xl text-lg leading-8 text-white/72">
+              For work, internships, or collaborations, email me directly or open my resume.
+            </p>
 
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Link
-                href="https://www.linkedin.com/in/tanishq-chaudhari-0540aa28a"
+                href="mailto:tbchaudhari7@gmail.com"
+                className="inline-flex h-12 items-center justify-center rounded-full bg-[#f4b860] px-6 text-sm font-semibold text-black transition hover:-translate-y-0.5 hover:bg-[#f8c56f]"
+              >
+                Email me
+              </Link>
+              <Link
+                href="/Tanishq-Chaudhari-Resume.pdf"
                 target="_blank"
                 rel="noreferrer"
-                className="mt-8 inline-flex h-12 items-center justify-center rounded-full bg-[#f4b860] px-6 text-sm font-semibold text-black transition hover:-translate-y-0.5 hover:bg-[#f8c56f]"
+                className="inline-flex h-12 items-center justify-center rounded-full border border-white/10 bg-white/6 px-6 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-white/10"
               >
-                Open LinkedIn profile
+                Open resume
               </Link>
             </div>
+
+            <p className="mt-6 text-sm text-white/55">
+              LinkedIn: <Link href="https://www.linkedin.com/in/tanishq-chaudhari-0540aa28a" target="_blank" rel="noreferrer" className="underline decoration-white/30 underline-offset-4">linkedin.com/in/tanishq-chaudhari-0540aa28a</Link>
+            </p>
           </div>
         </section>
       </main>
