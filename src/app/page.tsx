@@ -4,15 +4,15 @@ import Link from "next/link";
 const highlights = [
   {
     label: "Education",
-    value: "B.Tech CSE, IIT Gandhinagar, 2023-2027",
+    value: "B.Tech CSE, IIT Gandhinagar (2023-2027)",
   },
   {
     label: "Current role",
-    value: "Software Engineering Intern at Samsung India, Noida",
+    value: "Software Engineering Intern @ Samsung India",
   },
   {
-    label: "Achievements",
-    value: "JEE Advanced AIR 1682, JEE Main AIR 1464, Dean's List",
+    label: "Academics",
+    value: "JEE Adv AIR 1682, JEE Main AIR 1464, Dean's List",
   },
 ];
 
@@ -20,14 +20,16 @@ const projects = [
   {
     name: "ChatForge",
     summary:
-      "Real-time chat application with JWT auth, socket-based messaging, typing indicators, read receipts, Redis presence tracking, Kafka pipelines, and Dockerized testing.",
-    stack: ["Node.js", "Express", "Socket.io", "MongoDB", "Redis", "Kafka", "Docker"],
+      "A real-time chat application handling concurrent users. Built with Node.js, WebSocket messaging, Redis presence tracking, and Kafka pipelines.",
+    stack: ["Node.js", "Socket.io", "MongoDB", "Redis", "Kafka", "Docker"],
+    link: "https://github.com/TanishqChaudhari/ChatForge"
   },
   {
     name: "QuickBites",
     summary:
-      "Food delivery backend system with normalized MySQL design, REST APIs, RBAC, audit logging, ACID transactions, sharding, and a custom B+ Tree index in Python.",
-    stack: ["MySQL", "Python", "REST APIs", "RBAC", "ACID", "Sharding", "B+ Trees"],
+      "Food delivery backend system with normalized MySQL databases, ACID transactions, RBAC, and custom B+ Tree indices in Python.",
+    stack: ["MySQL", "Python", "REST APIs", "ACID", "Sharding", "B+ Trees"],
+    link: "https://github.com/TanishqChaudhari/QuickBites"
   },
 ];
 
@@ -55,152 +57,132 @@ const achievements = [
 
 export default function Home() {
   return (
-    <div className="relative overflow-hidden">
+    <div className="relative overflow-hidden text-neutral-200">
       <main className="relative mx-auto flex min-h-screen w-full max-w-6xl flex-col px-6 pb-12 pt-6 sm:px-10 lg:px-12">
-        <header className="sticky top-4 z-20 mb-10 rounded-full border border-black/10 bg-white/70 px-5 py-3 shadow-[0_20px_60px_rgba(20,20,20,0.08)] backdrop-blur">
+        <header className="sticky top-4 z-20 mb-10 rounded-full border border-neutral-800 bg-neutral-950/80 px-5 py-3 shadow-lg backdrop-blur-md">
           <div className="flex items-center justify-between gap-4">
             <div>
-              <p className="text-xs uppercase tracking-[0.35em] text-black/55">Tanishq Chaudhari</p>
-              <p className="text-sm text-black/70">Software developer</p>
+              <p className="text-xs uppercase tracking-widest text-neutral-400">Tanishq Chaudhari</p>
             </div>
-            <nav className="hidden items-center gap-6 text-sm text-black/70 md:flex">
-              <Link href="#about" className="transition hover:text-black">
-                About
-              </Link>
-              <Link href="#projects" className="transition hover:text-black">
+            <nav className="hidden items-center gap-6 text-sm text-neutral-400 md:flex">
+              <Link href="#projects" className="transition hover:text-white">
                 Projects
               </Link>
-              <Link href="#skills" className="transition hover:text-black">
+              <Link href="#skills" className="transition hover:text-white">
                 Skills
               </Link>
-              <Link href="#contact" className="transition hover:text-black">
+              <Link href="#contact" className="transition hover:text-white">
                 Contact
+              </Link>
+              <Link 
+                href="/Tanishq-Chaudhari-Resume.pdf" 
+                target="_blank" 
+                className="px-4 py-1.5 rounded-full border border-neutral-700 text-white hover:bg-neutral-800 transition"
+              >
+                Resume
               </Link>
             </nav>
           </div>
         </header>
 
         <section id="home" className="grid gap-8 pb-20 lg:grid-cols-[1.2fr_0.8fr] lg:gap-12 lg:pb-24">
-          <div className="flex flex-col justify-end">
-            <h1 className="max-w-4xl font-display text-5xl leading-[0.95] tracking-tight text-balance text-black sm:text-6xl lg:text-7xl">
-              I build backend systems, real-time apps, and clean software.
+          <div className="flex flex-col justify-center">
+            
+            <h1 className="max-w-4xl font-display text-5xl leading-[1.1] tracking-tight text-balance text-white sm:text-6xl">
+              Hi, I'm Tanishq. <br/> I engineer systems and write clean code.
             </h1>
 
-            <p className="mt-6 max-w-2xl text-lg leading-8 text-black/72 sm:text-xl">
-              I am Tanishq Bhushan Chaudhari, a Computer Science and Engineering student at IIT Gandhinagar.
-              I work with Node.js, Express.js, SQL, Python, Docker, and distributed system tools while learning from industry experience at Samsung India.
+            <p className="mt-6 max-w-2xl text-lg leading-relaxed text-neutral-400 sm:text-xl">
+              I'm a Computer Science student at IIT Gandhinagar, exploring backend architecture and currently working as a Software Engineering Intern at Samsung India.
             </p>
 
-            <p className="mt-4 max-w-2xl text-lg leading-8 text-black/72 sm:text-xl">
-              I like building solid systems, writing clear code, and keeping the work practical.
+            <p className="mt-4 max-w-2xl text-lg leading-relaxed text-neutral-400 sm:text-xl">
+              I enjoy translating complex logic into reliable software, playing with distributed systems, and continuously learning new technologies.
             </p>
 
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Link
                 href="#projects"
-                className="inline-flex h-12 items-center justify-center rounded-full bg-black px-6 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-black/90"
+                className="inline-flex h-11 items-center justify-center rounded-full bg-white px-6 text-sm font-medium text-black transition hover:bg-neutral-200"
               >
                 View projects
               </Link>
               <Link
                 href="mailto:tbchaudhari7@gmail.com"
-                className="inline-flex h-12 items-center justify-center rounded-full border border-black/15 bg-white/70 px-6 text-sm font-semibold text-black transition hover:-translate-y-0.5 hover:bg-white"
+                className="inline-flex h-11 items-center justify-center rounded-full border border-neutral-700 bg-neutral-900/50 px-6 text-sm font-medium text-white transition hover:bg-neutral-800"
               >
                 Email me
               </Link>
               <Link
-                href="/Tanishq-Chaudhari-Resume.pdf"
+                href="https://github.com/TanishqChaudhari"
                 target="_blank"
-                rel="noreferrer"
-                className="inline-flex h-12 items-center justify-center rounded-full border border-black/15 bg-[#f4b860] px-6 text-sm font-semibold text-black transition hover:-translate-y-0.5 hover:bg-[#f8c56f]"
+                className="inline-flex h-11 items-center justify-center rounded-full border border-neutral-700 bg-neutral-900/50 px-6 text-sm font-medium text-white transition hover:bg-neutral-800"
               >
-                Resume
+                GitHub
               </Link>
             </div>
 
-            <div className="mt-10 grid gap-4 sm:grid-cols-3">
+            <div className="mt-12 grid gap-4 sm:grid-cols-3">
               {highlights.map((item) => (
                 <article
                   key={item.label}
-                  className="rounded-3xl border border-black/10 bg-white/70 p-5 shadow-[0_18px_45px_rgba(20,20,20,0.06)] backdrop-blur"
+                  className="rounded-2xl border border-neutral-800 bg-neutral-900/30 p-5 backdrop-blur-sm"
                 >
-                  <p className="text-xs uppercase tracking-[0.3em] text-black/45">{item.label}</p>
-                  <p className="mt-3 text-base font-medium leading-6 text-black">{item.value}</p>
+                  <p className="text-xs uppercase tracking-widest text-neutral-500">{item.label}</p>
+                  <p className="mt-2 text-sm font-medium leading-relaxed text-neutral-200">{item.value}</p>
                 </article>
               ))}
             </div>
           </div>
 
-          <aside className="flex h-full items-stretch">
-            <div className="flex w-full flex-col gap-6 rounded-[2rem] border border-black/10 bg-[#1b1a18] p-6 text-white shadow-[0_30px_80px_rgba(20,20,20,0.2)] sm:p-8">
-              <div className="overflow-hidden rounded-[1.5rem] border border-white/10 bg-[#2a2926]">
+          <aside className="flex h-full items-stretch lg:pt-4">
+            <div className="flex w-full flex-col gap-6 rounded-[2rem] border border-neutral-800 bg-neutral-900/40 p-3 shadow-2xl sm:p-4">
+              <div className="overflow-hidden rounded-3xl border border-neutral-800 bg-neutral-950 relative h-full min-h-[400px]">
                 <Image
                   src="/profile-photo.png"
                   alt="Portrait of Tanishq Chaudhari"
-                  width={900}
-                  height={1100}
+                  fill
                   priority
-                  className="h-full w-full object-cover"
+                  sizes="(max-width: 768px) 100vw, 400px"
+                  className="object-cover opacity-80 hover:opacity-100 transition-opacity duration-500"
                 />
-              </div>
-
-              <div>
-                <p className="text-xs uppercase tracking-[0.35em] text-white/45">Profile</p>
-                <h2 className="mt-4 font-display text-3xl leading-tight sm:text-4xl">
-                  IIT Gandhinagar CSE and Samsung India intern.
-                </h2>
-                <p className="mt-4 max-w-md text-sm leading-7 text-white/72">
-                  Interested in backend engineering, scalable systems, and software that works reliably under pressure.
-                </p>
               </div>
             </div>
           </aside>
         </section>
 
-        <section id="about" className="grid gap-6 pb-20 lg:grid-cols-[0.95fr_1.05fr] lg:gap-10">
-          <div>
-            <p className="text-sm uppercase tracking-[0.35em] text-black/45">About</p>
-            <h2 className="mt-4 font-display text-4xl tracking-tight text-black sm:text-5xl">
-              Simple. Clear. Built around the work.
-            </h2>
-          </div>
-          <div className="rounded-[2rem] border border-black/10 bg-white/75 p-6 shadow-[0_18px_45px_rgba(20,20,20,0.06)] backdrop-blur sm:p-8">
-            <p className="text-lg leading-8 text-black/75">
-              I study Computer Science and Engineering at IIT Gandhinagar, and I am currently working as a Software Engineering Intern at Samsung India in Noida.
-            </p>
-            <p className="mt-4 text-lg leading-8 text-black/75">
-              I like backend systems, databases, distributed tools, and practical engineering that makes products feel dependable.
-            </p>
-          </div>
-        </section>
-
         <section id="projects" className="pb-20">
-          <div className="mb-6 flex items-end justify-between gap-4">
-            <div>
-              <p className="text-sm uppercase tracking-[0.35em] text-black/45">Projects</p>
-              <h2 className="mt-4 font-display text-4xl tracking-tight text-black sm:text-5xl">
-                Projects from my resume.
-              </h2>
-            </div>
-            <p className="hidden max-w-sm text-sm leading-6 text-black/60 md:block">
-              Two projects that best show the kind of systems I like building.
-            </p>
+          <div className="mb-8">
+            <h2 className="font-display text-3xl tracking-tight text-white sm:text-4xl">
+              Featured Work
+            </h2>
+            <p className="mt-3 text-neutral-400 text-lg">Systems and applications I've built to scale.</p>
           </div>
 
-          <div className="grid gap-4 lg:grid-cols-2">
+          <div className="grid gap-6 lg:grid-cols-2">
             {projects.map((project) => (
               <article
                 key={project.name}
-                className="rounded-[1.75rem] border border-black/10 bg-white/80 p-6 shadow-[0_16px_40px_rgba(20,20,20,0.06)] backdrop-blur"
+                className="flex flex-col justify-between rounded-[1.5rem] border border-neutral-800 bg-neutral-900/30 p-6 sm:p-8 backdrop-blur"
               >
-                <p className="text-xs uppercase tracking-[0.35em] text-black/45">Project</p>
-                <h3 className="mt-4 text-2xl font-semibold text-black">{project.name}</h3>
-                <p className="mt-3 text-base leading-7 text-black/70">{project.summary}</p>
-                <div className="mt-5 flex flex-wrap gap-2">
+                <div>
+                  <div className="flex items-start justify-between gap-4">
+                    <h3 className="text-2xl font-semibold text-white">{project.name}</h3>
+                    <Link 
+                      href={project.link}
+                      target="_blank"
+                      className="text-neutral-400 hover:text-white transition"
+                    >
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.2c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+                    </Link>
+                  </div>
+                  <p className="mt-4 text-base leading-relaxed text-neutral-400">{project.summary}</p>
+                </div>
+                <div className="mt-6 flex flex-wrap gap-2">
                   {project.stack.map((item) => (
                     <span
                       key={item}
-                      className="rounded-full border border-black/10 bg-black/5 px-3 py-1 text-xs font-medium text-black/70"
+                      className="rounded-lg bg-neutral-800/80 px-2.5 py-1 text-xs font-medium text-neutral-300 border border-neutral-700/50"
                     >
                       {item}
                     </span>
@@ -212,13 +194,13 @@ export default function Home() {
         </section>
 
         <section id="skills" className="pb-20">
-          <div className="rounded-[1.75rem] border border-black/10 bg-[#121212] p-6 text-white shadow-[0_18px_45px_rgba(20,20,20,0.16)] sm:p-8">
-            <p className="text-xs uppercase tracking-[0.35em] text-white/45">Skills</p>
-            <div className="mt-5 flex flex-wrap gap-3">
+          <div className="rounded-[1.5rem] border border-neutral-800 bg-neutral-900/30 p-6 sm:p-8 backdrop-blur">
+            <h2 className="font-display text-2xl tracking-tight text-white mb-6">Technologies & Skills</h2>
+            <div className="flex flex-wrap gap-3">
               {skills.map((item) => (
                 <span
                   key={item}
-                  className="rounded-full border border-white/10 bg-white/6 px-4 py-2 text-sm text-white/84"
+                  className="rounded-full border border-neutral-700 bg-neutral-950 px-5 py-2.5 text-sm font-medium text-neutral-300"
                 >
                   {item}
                 </span>
@@ -228,44 +210,42 @@ export default function Home() {
         </section>
 
         <section className="grid gap-6 pb-12 lg:grid-cols-[1fr_0.9fr]">
-          <div className="rounded-[1.75rem] border border-black/10 bg-white/80 p-6 shadow-[0_24px_60px_rgba(20,20,20,0.08)] backdrop-blur sm:p-8">
-            <p className="text-sm uppercase tracking-[0.35em] text-black/45">Achievements</p>
-            <ul className="mt-5 space-y-3 text-base leading-7 text-black/75">
+          <div className="rounded-[1.5rem] border border-neutral-800 bg-neutral-900/30 p-6 sm:p-8 backdrop-blur">
+            <h2 className="font-display text-2xl tracking-tight text-white mb-6">Achievements</h2>
+            <ul className="space-y-4 text-base leading-relaxed text-neutral-400">
               {achievements.map((item) => (
-                <li key={item}>• {item}</li>
+                <li key={item} className="flex gap-3 items-start">
+                  <span className="text-white mt-1">✦</span> {item}
+                </li>
               ))}
             </ul>
           </div>
 
-          <div id="contact" className="rounded-[1.75rem] border border-black/10 bg-[#171717] p-6 text-white shadow-[0_24px_60px_rgba(20,20,20,0.12)] sm:p-8">
-            <p className="text-sm uppercase tracking-[0.35em] text-white/45">Contact</p>
-            <h2 className="mt-4 font-display text-4xl tracking-tight text-white sm:text-5xl">
-              tbchaudhari7@gmail.com
+          <div id="contact" className="rounded-[1.5rem] border border-neutral-800 bg-[#0a0a0a] p-6 sm:p-8">
+            <p className="text-sm uppercase tracking-widest text-neutral-500">Contact</p>
+            <h2 className="mt-4 font-display text-3xl tracking-tight text-white sm:text-4xl">
+              Let's connect.
             </h2>
-            <p className="mt-4 max-w-xl text-lg leading-8 text-white/72">
-              For work, internships, or collaborations, email me directly or open my resume.
+            <p className="mt-4 max-w-xl text-md leading-relaxed text-neutral-400">
+              My inbox is always open. Whether you have a question, an opportunity, or just want to chat.
             </p>
 
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Link
                 href="mailto:tbchaudhari7@gmail.com"
-                className="inline-flex h-12 items-center justify-center rounded-full bg-[#f4b860] px-6 text-sm font-semibold text-black transition hover:-translate-y-0.5 hover:bg-[#f8c56f]"
+                className="inline-flex h-11 items-center justify-center rounded-full bg-white px-6 text-sm font-medium text-black transition hover:bg-neutral-200"
               >
-                Email me
+                Say Hello
               </Link>
               <Link
-                href="/Tanishq-Chaudhari-Resume.pdf"
+                href="https://www.linkedin.com/in/tanishq-chaudhari-0540aa28a"
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex h-12 items-center justify-center rounded-full border border-white/10 bg-white/6 px-6 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-white/10"
+                className="inline-flex h-11 items-center justify-center rounded-full border border-neutral-700 bg-neutral-900/50 px-6 text-sm font-medium text-white transition hover:bg-neutral-800"
               >
-                Open resume
+                LinkedIn
               </Link>
             </div>
-
-            <p className="mt-6 text-sm text-white/55">
-              LinkedIn: <Link href="https://www.linkedin.com/in/tanishq-chaudhari-0540aa28a" target="_blank" rel="noreferrer" className="underline decoration-white/30 underline-offset-4">linkedin.com/in/tanishq-chaudhari-0540aa28a</Link>
-            </p>
           </div>
         </section>
       </main>
